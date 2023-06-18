@@ -10,6 +10,7 @@ class DatabaseSeeder extends BaseSeeder
             UserSeeder::class,
             ProductSeeder::class,
             AttributeSeeder::class,
+            AttributeProductSeeder::class,
         ]);
     }
 
