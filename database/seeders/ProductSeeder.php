@@ -13,6 +13,6 @@ class ProductSeeder extends BaseSeeder
 
     protected function fake()
     {
-        Product::factory(30)->create();
+        Product::factory(50)->create();
     }
 }

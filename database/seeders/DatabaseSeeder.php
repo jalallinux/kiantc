@@ -11,6 +11,7 @@ class DatabaseSeeder extends BaseSeeder
             ProductSeeder::class,
             AttributeSeeder::class,
             AttributeProductSeeder::class,
+            AttributeProductValuesSeeder::class,
         ]);
     }
 
