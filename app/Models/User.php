@@ -16,7 +16,7 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
-        'mobile_number',
+        'mobile',
         'password',
     ];
 
@@ -33,7 +33,7 @@ class User extends Authenticatable
 
     public function setMobileNumberAttribute($value)
     {
-        return tap($this, fn () => $this->attributes['mobile_number'] = to_valid_mobile_number($value));
+        return tap($this, fn () => $this->attributes['mobile'] = to_valid_mobile_number($value));
     }
 
     public function products(): HasMany

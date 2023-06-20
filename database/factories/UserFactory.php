@@ -19,7 +19,7 @@ class UserFactory extends Factory
         return [
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
-            'mobile_number' => fake()->unique()->numerify('091########'),
+            'mobile' => fake()->unique()->numerify('091########'),
             'password' => '123456',
             'created_at' => $createdAt = fake()->dateTimeBetween('-1 years'),
             'updated_at' => $createdAt,

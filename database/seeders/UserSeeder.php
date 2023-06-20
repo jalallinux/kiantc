@@ -11,7 +11,7 @@ class UserSeeder extends BaseSeeder
         User::factory()->create([
             'first_name' => 'Smj',
             'last_name' => 'JalalZadeh',
-            'mobile_number' => '09177876563',
+            'mobile' => '09177876563',
         ]);
     }
 
