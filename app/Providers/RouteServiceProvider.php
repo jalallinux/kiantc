@@ -29,16 +29,18 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            foreach (glob(base_path('routes/api/*.php')) as $path) {
-                $name = pathinfo($path, PATHINFO_FILENAME);
+            foreach (glob(base_path('routes/api/*/*.php')) as $path) {
+                [$name, $version] = [
+                    pathinfo($path, PATHINFO_FILENAME),
+                    last(explode('/', pathinfo($path, PATHINFO_DIRNAME)))
+                ];
                 Route::middleware(['api', $name])
-                    ->prefix($name)
-                    ->name("{$name}.")
+                    ->prefix("{$version}/{$name}")
+                    ->name("{$version}.{$name}.")
                     ->group($path);
             }
 
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+            Route::middleware('web')->group(base_path('routes/web.php'));
         });
     }
 
