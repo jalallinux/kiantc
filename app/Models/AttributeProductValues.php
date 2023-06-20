@@ -18,6 +18,11 @@ class AttributeProductValues extends Model
         'sell_count',
     ];
 
+    protected $casts = [
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
+    ];
+
     public function attributeProduct(): BelongsTo
     {
         return $this->belongsTo(AttributeProduct::class);

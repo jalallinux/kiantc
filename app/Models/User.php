@@ -26,6 +26,11 @@ class User extends Authenticatable
 
     protected $hidden = ['password'];
 
+    protected $casts = [
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
+    ];
+
     public function setPasswordAttribute($value)
     {
         return tap($this, fn () => $this->attributes['password'] = Hash::make($value));

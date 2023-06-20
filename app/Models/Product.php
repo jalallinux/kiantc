@@ -18,6 +18,11 @@ class Product extends Model
         'image_location',
     ];
 
+    protected $casts = [
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
