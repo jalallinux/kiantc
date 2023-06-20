@@ -6,7 +6,6 @@ use App\Models\AttributeProduct;
 
 class AttributeProductSeeder extends BaseSeeder
 {
-
     protected function initialize()
     {
         //

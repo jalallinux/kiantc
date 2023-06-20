@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-
 use App\Models\AttributeProductValues;
 
 class AttributeProductValuesSeeder extends BaseSeeder

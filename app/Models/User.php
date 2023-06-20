@@ -26,15 +26,14 @@ class User extends Authenticatable
 
     protected $hidden = ['password'];
 
-
     public function setPasswordAttribute($value)
     {
-        return tap($this, fn() => $this->attributes['password'] = Hash::make($value));
+        return tap($this, fn () => $this->attributes['password'] = Hash::make($value));
     }
 
     public function setMobileNumberAttribute($value)
     {
-        return tap($this, fn() => $this->attributes['mobile_number'] = to_valid_mobile_number($value));
+        return tap($this, fn () => $this->attributes['mobile_number'] = to_valid_mobile_number($value));
     }
 
     public function products(): HasMany

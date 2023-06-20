@@ -32,7 +32,7 @@ class RouteServiceProvider extends ServiceProvider
             foreach (glob(base_path('routes/api/*/*.php')) as $path) {
                 [$name, $version] = [
                     pathinfo($path, PATHINFO_FILENAME),
-                    last(explode('/', pathinfo($path, PATHINFO_DIRNAME)))
+                    last(explode('/', pathinfo($path, PATHINFO_DIRNAME))),
                 ];
                 Route::middleware(['api', $name])
                     ->prefix("{$version}/{$name}")

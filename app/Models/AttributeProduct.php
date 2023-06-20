@@ -13,7 +13,7 @@ class AttributeProduct extends Pivot
 
     public $incrementing = true;
 
-    public $timestamps =  false;
+    public $timestamps = false;
 
     protected $fillable = [
         'product_id',

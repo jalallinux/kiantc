@@ -24,7 +24,7 @@ class AttributeSeeder extends BaseSeeder
     protected function initialize()
     {
         Attribute::factory()->createMany(
-            collect(self::ITEMS)->map(fn($item) => ['title' => $item])
+            collect(self::ITEMS)->map(fn ($item) => ['title' => $item])
         );
     }
 
