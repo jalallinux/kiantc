@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
                     last(explode('/', pathinfo($path, PATHINFO_DIRNAME))),
                 ];
                 Route::middleware(['api', $name])
-                    ->prefix("{$version}/{$name}")
+                    ->prefix("{$version}")
                     ->name("{$version}.{$name}.")
                     ->group($path);
             }
