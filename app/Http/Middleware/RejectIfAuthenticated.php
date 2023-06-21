@@ -15,9 +15,10 @@ class RejectIfAuthenticated
 {
     /**
      * Handle an incoming request.
-     * @param Request $request
-     * @param Closure $next
-     * @param mixed ...$guards
+     *
+     * @param  Request  $request
+     * @param  Closure  $next
+     * @param  mixed  ...$guards
      * @return Application|RedirectResponse|Redirector|mixed
      */
     public function handle(Request $request, Closure $next, ...$guards): mixed

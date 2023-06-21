@@ -10,12 +10,12 @@ use App\Http\Resources\API\V1\Auth\MeResource;
 use App\Http\Resources\API\V1\Auth\TokenResource;
 use App\Models\User;
 use Illuminate\Auth\AuthenticationException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     const REGISTER_TOKEN_NAME = 'Register';
+
     const LOGIN_TOKEN_NAME = 'Login';
 
     public function me(AuthenticatedRequest $request)
