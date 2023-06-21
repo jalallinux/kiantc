@@ -81,7 +81,7 @@ class Handler extends ExceptionHandler
                     break;
                 case ModelNotFoundException::class:
                     return responseMessage(__('validation.exists', [
-                        'attribute' => __('validation.attributes.' . classToSlug($e->getModel()))
+                        'attribute' => __('validation.attributes.' . modelLangAttribute($e->getModel()))
                     ]), 404);
                 default :
                     parent::render($request, $e);

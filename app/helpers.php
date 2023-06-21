@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Str;
 
 if (! function_exists('to_valid_mobile_number')) {
     function to_valid_mobile_number(string $mobile, string $prefix = '+98'): string
@@ -18,9 +19,9 @@ if (!function_exists('responseMessage')) {
     }
 }
 
-if (!function_exists('classToSlug')) {
-    function classToSlug(string $class, string $separator = '_'): string
+if (!function_exists('modelLangAttribute')) {
+    function modelLangAttribute(string $class, string $separator = '_'): string
     {
-        return strtolower(implode($separator, preg_split('/(?=[A-Z])/', class_basename($class), -1, PREG_SPLIT_NO_EMPTY)));
+        return strtolower(Str::snake(last(explode('\\', $class)), $separator));
     }
 }
