@@ -17,6 +17,10 @@ class Attribute extends Model
         'title',
     ];
 
+    protected $with = [
+        'attributeProductValues',
+    ];
+
     public function products(): BelongsToMany
     {
         return $this->belongsToMany(Product::class);

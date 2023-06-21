@@ -19,6 +19,8 @@ class AttributeProductValues extends Model
     ];
 
     protected $casts = [
+        'price' => 'int',
+        'sell_count' => 'int',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp',
     ];
