@@ -21,7 +21,7 @@ MEMCACHED_HOST=host.docker.internal
 
 # Cache (Redis)
 REDIS_HOST=host.docker.internal
-REDIS_PASSWORD=
+REDIS_PASSWORD=redis
 REDIS_PORT=6379
 ```
 
