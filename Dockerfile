@@ -1,4 +1,4 @@
-FROM jalallinux/laravel-10:php-82
+FROM ghcr.io/jalallinux/laravel:php-82
 
 COPY . /app
 
