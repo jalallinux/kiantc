@@ -16,6 +16,11 @@ class ProductIndexRequest extends PaginateAndSearchableRequest
         return true;
     }
 
+    public function orderBy(): array
+    {
+        return ['created_at', 'updated_at'];
+    }
+
     public function searchRules(): array
     {
         return [

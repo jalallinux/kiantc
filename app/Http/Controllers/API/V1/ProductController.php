@@ -25,7 +25,7 @@ class ProductController extends Controller
 
         $products->search($request->searchFields());
 
-        return ProductIndexResource::collection($products->paginate());
+        return ProductIndexResource::collection($products->paginate(perPage: $request->perPage, page: $request->page));
     }
 
     /**
