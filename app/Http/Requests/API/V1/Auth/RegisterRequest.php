@@ -6,6 +6,15 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterRequest extends FormRequest
 {
+    protected function prepareForValidation()
+    {
+        if (! is_null($this->input('mobile'))) {
+            $this->merge([
+                'mobile' => to_valid_mobile_number($this->input('mobile')),
+            ]);
+        }
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
