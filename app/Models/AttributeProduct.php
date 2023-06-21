@@ -30,7 +30,7 @@ class AttributeProduct extends Pivot
         return $this->belongsTo(Product::class);
     }
 
-    public function values(): HasMany
+    public function attributeProductValues(): HasMany
     {
         return $this->hasMany(AttributeProductValues::class);
     }
