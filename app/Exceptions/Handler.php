@@ -63,8 +63,8 @@ class Handler extends ExceptionHandler
     public function convertQueryExceptions($request, Throwable $e)
     {
         switch ($e->getCode()) {
-            case "22P02":
-                throw (new ModelNotFoundException())->setModel(@last(array_keys($request->route()->parameters)));
+            case '22P02':
+                throw (new ModelNotFoundException)->setModel(@last(array_keys($request->route()->parameters)));
             default:
                 break;
         }
@@ -81,12 +81,13 @@ class Handler extends ExceptionHandler
                     break;
                 case ModelNotFoundException::class:
                     return responseMessage(__('validation.exists', [
-                        'attribute' => __('validation.attributes.' . modelLangAttribute($e->getModel()))
+                        'attribute' => __('validation.attributes.'.modelLangAttribute($e->getModel())),
                     ]), 404);
-                default :
+                default:
                     parent::render($request, $e);
             }
         }
+
         return parent::render($request, $e);
     }
 }

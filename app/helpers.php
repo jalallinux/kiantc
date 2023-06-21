@@ -10,16 +10,16 @@ if (! function_exists('to_valid_mobile_number')) {
     }
 }
 
-if (!function_exists('responseMessage')) {
+if (! function_exists('responseMessage')) {
     function responseMessage(string $message, int $status = 200): JsonResponse
     {
         return response()->json([
-            'message' => $message
+            'message' => $message,
         ], $status);
     }
 }
 
-if (!function_exists('modelLangAttribute')) {
+if (! function_exists('modelLangAttribute')) {
     function modelLangAttribute(string $class, string $separator = '_'): string
     {
         return strtolower(Str::snake(last(explode('\\', $class)), $separator));

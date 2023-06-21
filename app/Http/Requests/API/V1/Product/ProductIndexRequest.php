@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\API\V1\Product;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\API\PaginateAndSearchableRequest;
 
-class ProductIndexRequest extends FormRequest
+class ProductIndexRequest extends PaginateAndSearchableRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,15 +16,11 @@ class ProductIndexRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
-    public function rules()
+    public function searchRules(): array
     {
         return [
-            //
+            'search' => ['nullable', 'array'],
+            'search.title' => ['nullable', 'string'],
         ];
     }
 }

@@ -34,17 +34,19 @@ class Setup extends Command
     public function handle()
     {
         if (
-            !$this->option('key-generate') && !$this->option('migrate-fresh-seed')
-            && !$this->option('migrate') && !$this->option('pm2-startup')
-            && !$this->option('pm2-link') && !$this->option('symlinks')
-            && !$this->option('help')
+            ! $this->option('key-generate') && ! $this->option('migrate-fresh-seed')
+            && ! $this->option('migrate') && ! $this->option('pm2-startup')
+            && ! $this->option('pm2-link') && ! $this->option('symlinks')
+            && ! $this->option('help')
         ) {
             $this->error('No option passes. run `php artisan setup --help` to see options.');
+
             return 0;
         }
 
         if ($this->option('key-generate')) {
             $this->call('key:generate', ['--force' => 1]);
+            $this->call('passport:install', ['--force' => 1]);
         }
 
         $this->callSilently('optimize:clear');
@@ -58,33 +60,32 @@ class Setup extends Command
         }
 
         if ($this->option('pm2-startup')) {
-            shell_exec("pm2 stop all");
-            shell_exec("pm2 del all");
-            shell_exec("pm2 start " . base_path('ecosystem.config.js'));
-            shell_exec("pm2 startup");
-            shell_exec("pm2 save --force");
+            shell_exec('pm2 stop all');
+            shell_exec('pm2 del all');
+            shell_exec('pm2 start '.base_path('ecosystem.config.js'));
+            shell_exec('pm2 startup');
+            shell_exec('pm2 save --force');
         }
 
         if ($this->option('pm2-link')) {
             $pm2Keys = config('app.pm2');
             if (empty($pm2Keys['public_key']) || empty($pm2Keys['secret_key'])) {
-                $this->error("Pm2 public_key or secret_key is not set.");
+                $this->error('Pm2 public_key or secret_key is not set.');
             } else {
-                shell_exec("pm2 link delete");
+                shell_exec('pm2 link delete');
                 shell_exec("pm2 link {$pm2Keys['secret_key']} {$pm2Keys['public_key']}");
             }
         }
 
         if ($this->option('symlinks')) {
             if (file_exists(public_path('storage'))) {
-                shell_exec("rm " . public_path('storage'));
+                shell_exec('rm '.public_path('storage'));
             }
             if (file_exists(public_path('docs'))) {
-                shell_exec("rm " . public_path('docs'));
+                shell_exec('rm '.public_path('docs'));
             }
             $this->call('storage:link');
         }
-
 
         if ($this->option('docs-generate')) {
             $this->call('sajya:docs');
