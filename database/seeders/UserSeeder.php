@@ -18,6 +18,6 @@ class UserSeeder extends BaseSeeder
 
     protected function fake()
     {
-        User::factory(10)->create();
+        User::factory(4)->create();
     }
 }
