@@ -19,8 +19,8 @@ class MeResource extends JsonResource
             'first_name' => $this->resource->first_name,
             'last_name' => $this->resource->last_name,
             'products_count' => $this->resource->products_count,
-            'created_at' => $this->resource->created_at,
-            'updated_at' => $this->resource->updated_at,
+            'created_at' => $this->resource->created_at->timestamp,
+            'updated_at' => $this->resource->updated_at->timestamp,
         ];
     }
 }

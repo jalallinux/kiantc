@@ -18,9 +18,8 @@ class Product extends Model
         'image_location',
     ];
 
-    protected $casts = [
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp',
+    protected $withCount = [
+        'attributes',
     ];
 
     public function user(): BelongsTo
