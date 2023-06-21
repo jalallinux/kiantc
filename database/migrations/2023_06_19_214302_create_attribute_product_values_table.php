@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('attribute_product_values', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('attribute_product_id')->constrained('attribute_product');
+            $table->foreignId('attribute_product_id')->constrained('attribute_product')->cascadeOnDelete();
             $table->string('label');
             $table->string('value');
             $table->decimal('price', 16, 0);
