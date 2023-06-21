@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+    laravel:
+        container_name: laravel
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        tty: true
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        ports:
+            - '9000:8000'
