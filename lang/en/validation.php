@@ -179,6 +179,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'user' => 'user',
+        'product' => 'product',
+        'attribute' => 'attribute',
+        'attribute_product' => 'attribute_product',
+        'attribute_product_value' => 'attribute_product_value',
+    ],
 
 ];

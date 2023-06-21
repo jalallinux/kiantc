@@ -16,5 +16,7 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many request attempts. Please try again in :seconds seconds.',
+    'unauthenticated' => 'Invalid authentication credentials.',
+    'unauthorization' => 'Access denied.',
 
 ];
