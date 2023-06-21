@@ -9,16 +9,7 @@ class AttributeSeeder extends BaseSeeder
     const ITEMS = [
         'Color',
         'Material',
-        'Fit',
-        'Sleeve Length',
-        'Collar Type',
-        'Pattern/Design',
-        'Neckline',
-        'Closure',
-        'Hemline',
-        'Pockets',
-        'Additional Features',
-        'Care Instructions',
+        'Size',
     ];
 
     protected function initialize()

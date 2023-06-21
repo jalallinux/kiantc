@@ -13,6 +13,6 @@ class AttributeProductSeeder extends BaseSeeder
 
     protected function fake()
     {
-        AttributeProduct::factory(300)->create();
+        AttributeProduct::factory(100)->create();
     }
 }
