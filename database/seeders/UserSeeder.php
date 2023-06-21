@@ -12,6 +12,7 @@ class UserSeeder extends BaseSeeder
             'first_name' => 'Smj',
             'last_name' => 'JalalZadeh',
             'mobile' => '09177876563',
+            'password' => 'Aa123456@',
         ]);
     }
 

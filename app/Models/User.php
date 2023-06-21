@@ -36,7 +36,7 @@ class User extends Authenticatable
         return tap($this, fn () => $this->attributes['password'] = Hash::make($value));
     }
 
-    public function setMobileNumberAttribute($value)
+    public function setMobileAttribute($value)
     {
         return tap($this, fn () => $this->attributes['mobile'] = to_valid_mobile_number($value));
     }
