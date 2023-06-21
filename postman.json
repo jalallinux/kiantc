@@ -160,13 +160,38 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_uri}}/v1/product",
+							"raw": "{{base_uri}}/v1/product?page=1&perPage=15&orderBy=price&orderType=DESC",
 							"host": [
 								"{{base_uri}}"
 							],
 							"path": [
 								"v1",
 								"product"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "15"
+								},
+								{
+									"key": "orderBy",
+									"value": "price",
+									"description": "sell_count | price | created_at | updated_at"
+								},
+								{
+									"key": "orderType",
+									"value": "DESC",
+									"description": "ASC | DESC"
+								},
+								{
+									"key": "search[title]",
+									"value": "gre",
+									"disabled": true
+								}
 							]
 						}
 					},
