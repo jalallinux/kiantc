@@ -8,9 +8,9 @@ class LoginRequest extends FormRequest
 {
     protected function prepareForValidation()
     {
-        if (!is_null($this->input('mobile'))) {
+        if (! is_null($this->input('mobile'))) {
             $this->merge([
-                'mobile' => to_valid_mobile_number($this->input('mobile'))
+                'mobile' => to_valid_mobile_number($this->input('mobile')),
             ]);
         }
     }
