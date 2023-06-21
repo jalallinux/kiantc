@@ -18,7 +18,7 @@ class ProductIndexRequest extends PaginateAndSearchableRequest
 
     public function orderBy(): array
     {
-        return ['created_at', 'updated_at'];
+        return ['sell_count', 'price', 'created_at', 'updated_at'];
     }
 
     public function searchRules(): array

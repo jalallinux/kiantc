@@ -22,7 +22,7 @@ class Attribute extends Model
         return $this->belongsToMany(Product::class);
     }
 
-    public function values(): HasManyThrough
+    public function attributeProductValues(): HasManyThrough
     {
         return $this->hasManyThrough(AttributeProductValues::class, AttributeProduct::class, 'attribute_id', 'attribute_product_id');
     }
